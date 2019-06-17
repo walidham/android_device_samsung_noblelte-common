@@ -160,6 +160,9 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
+# Prebuilt kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/noblelte-common/zImage
+
 # Manifest
 DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
 
@@ -228,7 +231,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
 
 # OpenMAX-shims
-zero_shims_omx += \
+noblelte_shims_omx += \
 	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/SHIM_TARGET.so \
 	/system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib64/SHIM_TARGET.so \
 	/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/SHIM_TARGET.so \
@@ -252,11 +255,11 @@ zero_shims_omx += \
 
 # Shims: libstagefright
 TARGET_LD_SHIM_LIBS +=\
-    $(subst SHIM_TARGET,libstagefright_shim,$(zero_shims_omx))
+    $(subst SHIM_TARGET,libstagefright_shim,$(noblelte_shims_omx))
 
 # Shims: libui
 TARGET_LD_SHIM_LIBS +=\
-    $(subst SHIM_TARGET,libui_shim,$(zero_shims_omx))
+    $(subst SHIM_TARGET,libui_shim,$(noblelte_shims_omx))
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
