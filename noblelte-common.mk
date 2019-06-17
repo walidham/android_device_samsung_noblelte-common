@@ -13,23 +13,23 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/noblelte-common
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Common Overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay
 
 ifneq (,$(wildcard lineage-sdk/ ))
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-lineage
 else
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-aosp
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-aosp
 endif
 
-ifneq ($(filter zerofltespr zeroltespr,$(TARGET_DEVICE)),)
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-cdma
+ifneq ($(filter nobleltetmo nobleltejv,$(TARGET_DEVICE)),)
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-cdma
 else
-DEVICE_PACKAGE_OVERLAYS += device/samsung/zero-common/overlay-gsm
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-gsm
 endif
 
 # This device is 640dpi.  However the platform doesn't
@@ -82,8 +82,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    device/samsung/zero-common/configs/permissions/com.samsung.permission.HRM_EXT.xml:system/etc/permissions/com.samsung.permission.HRM_EXT.xml \
-    device/samsung/zero-common/configs/permissions/com.samsung.permission.SSENSOR.xml:system/etc/permissions/com.samsung.permission.SSENSOR.xml
+    device/samsung/noblelte-common/configs/permissions/com.samsung.permission.HRM_EXT.xml:system/etc/permissions/com.samsung.permission.HRM_EXT.xml \
+    device/samsung/noblelte-common/configs/permissions/com.samsung.permission.SSENSOR.xml:system/etc/permissions/com.samsung.permission.SSENSOR.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -254,7 +254,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.power@1.0-service.zero
 
 PRODUCT_COPY_FILES += \
-device/samsung/zero-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
+device/samsung/noblelte-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
 	
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
@@ -277,7 +277,7 @@ PRODUCT_PACKAGES += \
 	modemloader
 
 # Properties 
-TARGET_SYSTEM_PROP += device/samsung/zero-common/system.prop
+TARGET_SYSTEM_PROP += device/samsung/noblelte-common/system.prop
     
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -382,10 +382,10 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
 # Get private non-open-source blobs
-$(call inherit-product-if-exists, vendor/samsung/zero-private/zero-private-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/noblelte-private/noblelte-private-vendor.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/zero-common/zero-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/noblelte-common/noblelte-common-vendor.mk)
 
 # include private blob configs
 -include vendor/samsung/zero-private/config.mk
