@@ -20,6 +20,6 @@ cc_library_static {
 		"CameraParameters.cpp",
 	],
 	include_dirs: [
-		"device/samsung/zero-common/include"
+		"device/samsung/noblelte-common/include"
 	],
 }
