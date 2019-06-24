@@ -381,7 +381,10 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
-# Get private non-open-source blobs
+# Get private non-open-source blobs for zero, if available
+$(call inherit-product-if-exists, vendor/samsung/zero-private/zero-private-vendor.mk)
+
+# Get private non-open-source blobs for noblelte, if available, extending zero-private blobs
 $(call inherit-product-if-exists, vendor/samsung/noblelte-private/noblelte-private-vendor.mk)
 
 # Get non-open-source specific aspects
