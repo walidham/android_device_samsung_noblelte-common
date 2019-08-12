@@ -392,3 +392,4 @@ $(call inherit-product-if-exists, vendor/samsung/noblelte-common/noblelte-common
 
 # include private blob configs
 -include vendor/samsung/zero-private/config.mk
+-include vendor/samsung/noblelte-private/config.mk

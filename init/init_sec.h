@@ -29,6 +29,9 @@ enum device_variant {
 
     UNKNOWN = -1,
 
+        /* Note 5 */
+    N920T,
+
 	/* Flat */
     G920F,
     G920I,

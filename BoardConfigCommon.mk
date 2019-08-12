@@ -147,7 +147,7 @@ TARGET_UNIFIED_DEVICE := true
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 BOARD_KERNEL_BASE := 0x10000000
 # BOARD_KERNEL_CMDLINE := commandline from boot.img by bootloader
 BOARD_KERNEL_PAGESIZE := 2048
@@ -298,7 +298,9 @@ WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
 
 # inherit from the proprietary version
+-include vendor/samsung/zero-common/BoardConfigVendor.mk
 -include vendor/samsung/noblelte-common/BoardConfigVendor.mk
 
 # inherit from the private proprietary version
+-include vendor/samsung/zero-private/BoardConfigVendor.mk
 -include vendor/samsung/noblelte-private/BoardConfigVendor.mk

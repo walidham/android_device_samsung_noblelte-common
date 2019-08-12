@@ -54,7 +54,7 @@ static enum zero_model zero_model_read() {
 	if (!strncmp(bootloader, "G920I", 5) || !strncmp(bootloader, "G925I", 5)) {
 		__zero_model = INDIA;
 	}
-	else if (!strncmp(bootloader, "G920T", 5) || !strncmp(bootloader, "G925T", 5)) {
+	else if (!strncmp(bootloader, "G920T", 5) || !strncmp(bootloader, "G925T", 5) || !strncmp(bootloader, "N920T", 5)) {
 		__zero_model = TMOBILE;
 	}
 	else if (!strncmp(bootloader, "G920W8", 6) || !strncmp(bootloader, "G925W8", 6)) {

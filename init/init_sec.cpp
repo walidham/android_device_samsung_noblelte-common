@@ -52,7 +52,7 @@ namespace android {
 namespace init {
 
 void vendor_load_properties()
-{    
+{
     string device_orig = base::GetProperty("ro.product.device", "");
     string platform = base::GetProperty("ro.board.platform", "");
     string bootloader = base::GetProperty("ro.bootloader", "");
@@ -61,11 +61,20 @@ void vendor_load_properties()
         return;
     }
 
+    // Default variant unknown
+    device_variant variant = UNKNOWN;
+
+    /*
+     * Note 5
+     */
+    if (bootloader.find("N920T") != string::npos) {
+        variant = N920T;
+    }
+
     /*
      * Flat
      */
-    device_variant variant = UNKNOWN;
-    if (bootloader.find("G920F") != string::npos) {
+    else if (bootloader.find("G920F") != string::npos) {
         if (device_orig != "zeroflteduo") {
             variant = G920F;
         }
@@ -120,6 +129,17 @@ void vendor_load_properties()
 
     string model, device, product;
     switch (variant) {
+
+         /*
+         * Note 5
+         */
+
+        case N920T:
+            /* nobleltetmo */
+            model = "SM-N920T";
+            device = "nobleltetmo";
+            product = "noblelte";
+            break;
 
         /*
          * Flat
