@@ -147,7 +147,7 @@ TARGET_UNIFIED_DEVICE := true
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_BASE := 0x10000000
 # BOARD_KERNEL_CMDLINE := commandline from boot.img by bootloader
 BOARD_KERNEL_PAGESIZE := 2048
@@ -159,6 +159,8 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+BOARD_KERNEL_LZ4C_DT := true
+LZMA_RAMDISK_TARGETS := boot,recovery
 
 # Prebuilt kernel
 #TARGET_PREBUILT_KERNEL := device/samsung/noblelte-common/zImage

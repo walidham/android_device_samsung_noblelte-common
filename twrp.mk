@@ -18,4 +18,3 @@ TW_USE_TOOLBOX := true
 PRODUCT_COPY_FILES += device/samsung/noblelte-common/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 RECOVERY_VARIANT := twrp
-LZMA_RAMDISK_TARGETS := recovery
