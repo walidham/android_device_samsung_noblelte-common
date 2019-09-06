@@ -76,7 +76,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
- 	frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:system/etc/permissions/android.hardware.vulkan.compute.xml \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
@@ -210,7 +210,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	keystore.exynos5 \
 	android.hardware.keymaster@3.0-impl \
-	android.hardware.keymaster@3.0-service	
+	android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -260,8 +260,8 @@ PRODUCT_PACKAGES += \
 	android.hardware.power@1.0-service.zero
 
 PRODUCT_COPY_FILES += \
-device/samsung/noblelte-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
-	
+	device/samsung/noblelte-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
+
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
     libui_shim \
@@ -282,9 +282,9 @@ PRODUCT_PACKAGES += \
 	android.hardware.radio.deprecated@1.0 \
 	modemloader
 
-# Properties 
+# Properties
 TARGET_SYSTEM_PROP += device/samsung/noblelte-common/system.prop
-    
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
@@ -348,7 +348,7 @@ PRODUCT_PACKAGES += \
 	resetprop.zero   # Required for setting ro.*-properties for dual-SIM support
 
 ifneq (,$(wildcard lineage-sdk/ ))
-# Trust	
+# Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 endif
@@ -361,7 +361,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service.zero
-
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -387,15 +386,11 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
-# Get private non-open-source blobs for zero, if available
-$(call inherit-product-if-exists, vendor/samsung/zero-private/zero-private-vendor.mk)
-
-# Get private non-open-source blobs for noblelte, if available, extending zero-private blobs
+# Get private non-open-source blobs for noblelte, if available
 $(call inherit-product-if-exists, vendor/samsung/noblelte-private/noblelte-private-vendor.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/noblelte-common/noblelte-common-vendor.mk)
 
 # include private blob configs
--include vendor/samsung/zero-private/config.mk
 -include vendor/samsung/noblelte-private/config.mk
