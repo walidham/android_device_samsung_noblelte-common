@@ -20,6 +20,8 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(BOARD_VENDOR),samsung)
 ifneq ($(filter noblelte nobleltecan nobleltedd nobleltedv nobleltejv nobleltektt nobleltelgt noblelteskt nobleltespr nobleltetmo noblelteusc nobleltezt,$(TARGET_DEVICE)),)
 
+$(shell mkdir -p $(OUT_DIR)/target/product/$(TARGET_DEVICE)/obj/KERNEL_OBJ/drivers/sensorhub/brcm/factory)
+
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 endif
