@@ -159,8 +159,6 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-BOARD_KERNEL_LZ4C_DT := true
-LZMA_RAMDISK_TARGETS := boot,recovery
 
 # Prebuilt kernel
 #TARGET_PREBUILT_KERNEL := device/samsung/noblelte-common/zImage
