@@ -119,6 +119,31 @@ void vendor_load_properties()
     }
 
     /*
+     * Edge Plus
+     */
+    else if (bootloader.find("G928F") != string::npos) {
+        if (device_orig != "zenltexx") {
+            variant = G928F;
+        }
+    } else if (bootloader.find("G928C") != string::npos) {
+        variant = G928C;
+    } else if (bootloader.find("G928I") != string::npos) {
+        variant = G928I;
+    } else if (bootloader.find("G928K") != string::npos) {
+        variant = G928K;
+    } else if (bootloader.find("G928L") != string::npos) {
+        variant = G928L;
+    } else if (bootloader.find("G928P") != string::npos) {
+        variant = G928P;
+    } else if (bootloader.find("G928S") != string::npos) {
+        variant = G928S;
+    } else if (bootloader.find("G928T") != string::npos) {
+        variant = G928T;
+    } else if (bootloader.find("G928W8") != string::npos) {
+        variant = G928W8;
+    }
+
+    /*
      * Note 5
      */
     else if (bootloader.find("N920C") != string::npos) {
@@ -269,6 +294,72 @@ void vendor_load_properties()
             model = "SM-G925W8";
             device = "zeroltecan";
             product = "zerolte";
+            break;
+
+        /*
+         * Edge Plus
+         */
+        case G928C:
+            /* zenltejv */
+            model = "SM-G928C";
+            device = "zenltejv";
+            product = "zenlte";
+            break;
+
+        case G928F:
+            /* zenltexx */
+            model = "SM-G928F";
+            device = "zenltexx";
+            product = "zenlte";
+            break;
+
+        case G928I:
+            /* zenltedv */
+            model = "SM-G928I";
+            device = "zenltedv";
+            product = "zenltedv";
+            break;
+
+        case G928K:
+            /* zenltektt */
+            model = "SM-G928K";
+            device = "zenltektt";
+            product = "zenltektt";
+            break;
+
+        case G928L:
+            /* zenltelgt */
+            model = "SM-G928L";
+            device = "zenltelgt";
+            product = "zenltelgt";
+            break;
+
+        case G928P:
+            /* zenltespr */
+            model = "SM-G928P";
+            device = "zenltespr";
+            product = "zenltespr";
+            break;
+
+        case G928S:
+            /* zenlteskt */
+            model = "SM-G928S";
+            device = "zenlteskt";
+            product = "zenlteskt";
+            break;
+
+        case G928T:
+            /* zenltetmo */
+            model = "SM-G928T";
+            device = "zenltetmo";
+            product = "zenltetmo";
+            break;
+
+        case G928W8:
+            /* zenltecan */
+            model = "SM-G928W8";
+            device = "zenltecan";
+            product = "zenltecan";
             break;
 
         /*

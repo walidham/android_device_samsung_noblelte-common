@@ -50,6 +50,17 @@ enum device_variant {
     G925T,
     G925W8,
 
+	/* Edge Plus */
+    G928C,
+    G928F,
+    G928I,
+    G928K,
+    G928L,
+    G928P,
+    G928S,
+    G928T,
+    G928W8,
+
         /* Note 5 */
     N920C,
     N920G,
