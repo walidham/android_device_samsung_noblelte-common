@@ -251,7 +251,9 @@ PRODUCT_PACKAGES += \
 # Power
 #
 PRODUCT_PACKAGES += \
-	android.hardware.power@1.0-service.zero
+    	android.hardware.power@1.0-service \
+	android.hardware.power@1.0-impl \
+	power.universal7420
 
 PRODUCT_COPY_FILES += \
 	device/samsung/noblelte-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
