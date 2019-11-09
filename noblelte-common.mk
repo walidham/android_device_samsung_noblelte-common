@@ -26,7 +26,7 @@ else
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-aosp
 endif
 
-ifneq ($(filter nobleltetmo nobleltejv,$(TARGET_DEVICE)),)
+ifneq ($(filter nobleltetmo nobleltejv zenltetmo zenltejv,$(TARGET_DEVICE)),)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-cdma
 else
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-gsm
