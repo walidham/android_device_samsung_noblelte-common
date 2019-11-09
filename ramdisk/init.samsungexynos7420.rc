@@ -289,7 +289,7 @@ on boot
     chown system radio /sys/class/android_usb/android0/usb_lock
 
 # SSWAP
-    write /proc/sys/vm/swappiness 150
+    write /proc/sys/vm/swappiness 130
 
     # FM Radio
     chmod 0640 /dev/fmradio
@@ -611,6 +611,9 @@ on fs
     chmod 0664 /factory/wv.keys
     chown system system /factory/wv.keys
 
+#ARGOSD network_throughput
+    chown system system /dev/network_throughput
+
 # TSP & Pressure Sensor
     chown system system /dev/i2c-7
     chmod 0660 /dev/i2c-7
@@ -713,6 +716,12 @@ on fs
     chown system usb /sys/class/usb_notify/usb_control/disable
     chmod 0664 /sys/class/usb_notify/usb_control/disable
 
+# ARGOSD
+service argos-daemon /system/bin/argosd
+    class main
+    user system
+    group system radio
+
 # MobiCore startup
 service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin
     class core
@@ -732,12 +741,3 @@ on property:sys.boot_completed=1
 service charger /charger
     class charger
     seclabel u:r:charger:s0
-
-service sswap /vendor/bin/sswap -s -f 2048
-    class core
-    user root
-    group root
-    oneshot
-
-on property:sys.boot_completed=1
-    start sswap
