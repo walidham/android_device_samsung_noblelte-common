@@ -53,6 +53,7 @@ enum device_variant {
 	/* Edge Plus */
     G928C,
     G928F,
+    G928G,
     G928I,
     G928K,
     G928L,
