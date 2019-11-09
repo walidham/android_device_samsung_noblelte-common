@@ -205,13 +205,11 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
-    lights.universal7420
+    android.hardware.light@2.0-service.samsung
 
 # Livedisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung
+    vendor.lineage.livedisplay@2.0-service.zero
 
 # Memory
 PRODUCT_PACKAGES += \
