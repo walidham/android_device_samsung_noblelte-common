@@ -383,6 +383,3 @@ $(call inherit-product-if-exists, vendor/samsung/noblelte-private/noblelte-priva
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/noblelte-common/noblelte-common-vendor.mk)
-
-# include private blob configs
--include vendor/samsung/noblelte-private/config.mk

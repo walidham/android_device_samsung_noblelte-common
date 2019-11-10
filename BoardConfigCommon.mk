@@ -299,6 +299,3 @@ WIFI_BAND                        := 802_11_ABG
 
 # inherit from the proprietary version
 -include vendor/samsung/noblelte-common/BoardConfigVendor.mk
-
-# inherit from the private proprietary version
--include vendor/samsung/noblelte-private/BoardConfigVendor.mk
