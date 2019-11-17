@@ -304,6 +304,11 @@ PRODUCT_PACKAGES += \
 	e2fsck_static \
 	resize2fs_static
 
+# S Pen
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/ft5x06_ts.idc:/system/usr/idc/ft5x06_ts.idc \
+    $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:/system/usr/idc/sec_e-pen.idc
+
 # Samsung
 PRODUCT_PACKAGES += \
     SamsungServiceMode
