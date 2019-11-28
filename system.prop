@@ -81,7 +81,7 @@ ro.nfc.sec_hal=true
 # Only use 6 overlays for now
 #
 debug.hwc.force_gpu=0
-debug.hwc.winupdate=1
+debug.hwc.winupdate=0
 debug.hwc.max_hw_overlays=6
 
 #
