@@ -63,6 +63,7 @@ enum device_variant {
     G928W8,
 
         /* Note 5 */
+    N9208,
     N920C,
     N920G,
     N920I,

@@ -152,6 +152,8 @@ void vendor_load_properties()
         if (device_orig != "nobleltejv") {
             variant = N920C;
         }
+    } else if (bootloader.find("N9208") != string::npos) {
+        variant = N9208;
     } else if (bootloader.find("N920G") != string::npos) {
         variant = N920G;
     } else if (bootloader.find("N920I") != string::npos) {
@@ -374,6 +376,13 @@ void vendor_load_properties()
         /*
          * Note 5
          */
+        case N9208:
+            /* nobleltezt */
+            model = "SM-N9208";
+            device = "nobleltezt";
+            product = "noblelte";
+            break;
+
         case N920C:
             /* nobleltejv */
             model = "SM-N920C";
