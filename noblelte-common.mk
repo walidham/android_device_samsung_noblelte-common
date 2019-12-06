@@ -86,20 +86,6 @@ PRODUCT_COPY_FILES += \
     device/samsung/noblelte-common/configs/permissions/com.samsung.permission.SSENSOR.xml:system/etc/permissions/com.samsung.permission.SSENSOR.xml
 
 # Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/vendor/etc/mixer_paths_0.xml
-
-ifneq ($(filter nobleltecan nobleltetmo zenltecan zenltespr zenltetmo,$(TARGET_DEVICE)),)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/mixer_gains.xml:system/vendor/etc/mixer_gains.xml \
-    $(LOCAL_PATH)/configs/mixer_paths_0-audience-tmo.xml:system/vendor/etc/mixer_paths_0-audience.xml
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/mixer_paths_0-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
-endif
-
 PRODUCT_PACKAGES += \
     audio.primary.universal7420 \
     audio.a2dp.default \
@@ -109,6 +95,12 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/vendor/etc/mixer_paths_0.xml \
+    $(LOCAL_PATH)/configs/mixer_paths_0-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
