@@ -26,7 +26,7 @@ else
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-aosp
 endif
 
-ifneq ($(filter nobleltetmo nobleltejv zenltetmo zenltejv,$(TARGET_DEVICE)),)
+ifneq ($(filter nobleltecan nobleltejv nobleltetmo zenltecan zenltejv zenltetmo,$(TARGET_DEVICE)),)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-cdma
 else
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-gsm
@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/vendor/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/mixer_paths_0.xml:system/vendor/etc/mixer_paths_0.xml
 
-ifeq ($(filter nobleltecan nobleltetmo zenltecan zenltespr zenltetmo,$(TARGET_DEVICE)),)
+ifneq ($(filter nobleltecan nobleltetmo zenltecan zenltespr zenltetmo,$(TARGET_DEVICE)),)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mixer_gains.xml:system/vendor/etc/mixer_gains.xml \
     $(LOCAL_PATH)/configs/mixer_paths_0-audience-tmo.xml:system/vendor/etc/mixer_paths_0-audience.xml
