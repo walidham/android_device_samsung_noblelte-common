@@ -135,8 +135,6 @@ void vendor_load_properties()
         variant = G928K;
     } else if (bootloader.find("G928L") != string::npos) {
         variant = G928L;
-    } else if (bootloader.find("G928P") != string::npos) {
-        variant = G928P;
     } else if (bootloader.find("G928S") != string::npos) {
         variant = G928S;
     } else if (bootloader.find("G928T") != string::npos) {
@@ -343,13 +341,6 @@ void vendor_load_properties()
             model = "SM-G928L";
             device = "zenltelgt";
             product = "zenltelgt";
-            break;
-
-        case G928P:
-            /* zenltespr */
-            model = "SM-G928P";
-            device = "zenltespr";
-            product = "zenltespr";
             break;
 
         case G928S:

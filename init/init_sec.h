@@ -57,7 +57,6 @@ enum device_variant {
     G928I,
     G928K,
     G928L,
-    G928P,
     G928S,
     G928T,
     G928W8,
