@@ -337,11 +337,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+ifneq (,$(wildcard lineage-sdk/ ))
 #
 # Touch
 #
 PRODUCT_PACKAGES += \
 	vendor.lineage.touch@1.0-service.samsung
+endif
 
 # Tools
 PRODUCT_PACKAGES += \
