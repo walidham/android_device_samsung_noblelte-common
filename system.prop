@@ -48,7 +48,6 @@ rild.libpath=/system/vendor/lib64/libsec-ril.so
 rild.libpath2=/system/vendor/lib64/libsec-ril-dsds.so 
 telephony.lteOnGsmDevice=1 
 telephony.lteOnCdmaDevice=0 
-ro.telephony.default_network=9 
 ro.use_data_netmgrd=false 
 persist.data.netmgrd.qos.enable=false 
 ro.ril.hsxpa=1 
