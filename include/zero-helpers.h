@@ -60,9 +60,6 @@ static enum zero_model zero_model_read() {
 	else if (!strncmp(bootloader, "G920T", 5) || !strncmp(bootloader, "G925T", 5) || !strncmp(bootloader, "G928T", 5) || !strncmp(bootloader, "N920T", 5)) {
 		__zero_model = TMOBILE;
 	}
-	else if (!strncmp(bootloader, "G920W8", 6) || !strncmp(bootloader, "G925W8", 6) || !strncmp(bootloader, "G928W8", 6) || !strncmp(bootloader, "N920W8", 6)) {
-		__zero_model = CANADA;
-	}
 	else if (!strncmp(bootloader, "N920C", 0)) {
 		__zero_model = DEFAULT;
 	}
