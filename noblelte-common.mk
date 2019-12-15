@@ -233,6 +233,14 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
     android.hardware.nfc@1.0-service
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/libnfc-nci.conf:system/vendor/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/libnfc-sec-hal.conf:system/vendor/etc/libnfc-sec-hal.conf \
+    $(LOCAL_PATH)/configs/libnfc-sec-vendor.conf:system/vendor/etc/libnfc-sec-vendor.conf \
+    $(LOCAL_PATH)/configs/libnfc-sec.conf:system/vendor/etc/libnfc-sec.conf \
+    $(LOCAL_PATH)/configs/nfc_key:system/vendor/etc/nfc_key \
+    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+
 # Network
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
