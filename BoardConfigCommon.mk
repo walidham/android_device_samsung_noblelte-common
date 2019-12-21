@@ -163,11 +163,7 @@ TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 #TARGET_PREBUILT_KERNEL := device/samsung/noblelte-common/zImage
 
 # Manifest
-ifneq (,$(wildcard lineage-sdk/ ))
-DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest_lineage.xml
-else
-DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
-endif
+DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest_rr.xml
 
 #
 # Networking
