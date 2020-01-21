@@ -42,7 +42,7 @@ TARGET_USES_64_BIT_BINDER := true
 BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-# BOARD_HAVE_SAMSUNG_BLUETOOTH := true -- causes issues with bluetooth
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
