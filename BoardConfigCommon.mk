@@ -122,6 +122,9 @@ JAVA_SOURCE_OVERLAYS := \
     org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
     org.lineageos.hardware|device/samsung/noblelte-common/lineagehw|**/*.java
 
+# H/W composer
+BOARD_USES_PREBUILT_HWCOMPOSER := true
+
 # HWCServices
 BOARD_USES_HWC_SERVICES := false
 
