@@ -159,7 +159,7 @@ TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 #TARGET_PREBUILT_KERNEL := device/samsung/noblelte-common/zImage
 
 # Manifest
-DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest_renouveau.xml
+DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest_rr.xml
 
 #
 # Networking
