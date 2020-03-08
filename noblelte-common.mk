@@ -19,7 +19,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Common Overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-rr
+
+ifneq (,$(wildcard lineage-sdk/ ))
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-lineage
+else
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay-aosp
+endif
 
 # This device is 560dpi.  However the platform doesn't
 # currently contain all of the bitmaps at 640dpi density so
