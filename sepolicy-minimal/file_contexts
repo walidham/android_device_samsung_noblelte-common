@@ -1,0 +1,4 @@
+/misc(/.*)?          u:object_r:tmp_root_mount_file:s0
+/preload(/.*)?       u:object_r:tmp_root_mount_file:s0
+/sbfs(/.*)?          u:object_r:tmp_root_mount_file:s0
+/hidden(/.*)?        u:object_r:tmp_root_mount_file:s0

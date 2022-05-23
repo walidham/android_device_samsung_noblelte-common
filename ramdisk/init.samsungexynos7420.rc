@@ -1,4 +1,4 @@
-import init.samsungexynos7420.usb.rc
+#import init.samsungexynos7420.usb.rc
 import init.wifi.rc
 import init.baseband.rc
 import init.gps.rc
@@ -729,6 +729,12 @@ service sswap /vendor/bin/sswap -s -f 1024
     user root
     group root
     oneshot
+
+service sensorservice /system/bin/sensorservice
+    class core
+    user system
+    group system radio
+    disabled
 
 on property:sys.boot_completed=1
     start sswap

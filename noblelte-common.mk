@@ -251,11 +251,11 @@ PRODUCT_PACKAGES += \
 #
 # Power
 #
-PRODUCT_PACKAGES += \
-	android.hardware.power@1.0-service.zero
+#PRODUCT_PACKAGES += \
+#	android.hardware.power@1.0-service.zero
 
-PRODUCT_COPY_FILES += \
-	device/samsung/noblelte-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
+#PRODUCT_COPY_FILES += \
+#	device/samsung/noblelte-common/hardware/power/profiles.xml:system/etc/power_profiles.xml
 
 # OpenMAX-shims
 PRODUCT_PACKAGES += \
@@ -273,7 +273,7 @@ PRODUCT_PACKAGES += \
 	libril \
 	libsecril-client \
 	libsecril-client-sap \
-        libsecnativefeature \
+    libsecnativefeature \
 	android.hardware.radio@1.0 \
 	android.hardware.radio.deprecated@1.0 \
 	modemloader
@@ -399,6 +399,107 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
 	$(LOCAL_PATH)/configs/wifi/filter_ie:system/vendor/etc/wifi/filter_ie
 	
+
+# Ubuntu Overlay Files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/halium/70-noblelte.rules:system/halium/lib/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/halium/70-noblelte.rules:system/halium/usr/lib/lxc-android-config/70-android.rules \
+    $(LOCAL_PATH)/halium/70-noblelte.rules:system/halium/etc/udev/rules.d/70-android.rules \
+    $(LOCAL_PATH)/halium/display.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/halium/config:system/halium/var/lib/lxc/android/config \
+    $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7420:/system/vendor/etc/fstab.samsungexynos7420 \
+    $(LOCAL_PATH)/halium/etc/init/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
+    $(LOCAL_PATH)/seccomp/crash_dump.arm.policy:system/etc/seccomp_policy/crash_dump.arm.policy \
+    $(LOCAL_PATH)/halium/etc/pulse/touch-android9.pa:system/halium/etc/pulse/touch-android9.pa \
+    $(LOCAL_PATH)/halium/fingerprint/init.fingerprint.rc:system/etc/init/init.fingerprint.rc \
+
+# Misc
+PRODUCT_PACKAGES += \
+    libandroid \
+    libandroid_runtime \
+    android.hardware.media.omx@1.0-service \
+    android.hardware.contexthub@1.0 \
+    libnetutils \
+    power.default \
+    libdrmframework_jni \
+    libmediadrmmetrics_lite \
+    libfwdlockengine \
+    drmserver \
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common@2.0 \
+    android.hardware.audio.common@2.0-util \
+    android.hardware.tv.cec@1.0 \
+    android.hardware.vibrator@1.1 \
+    android.hardware.vibrator@1.2 \
+    android.hardware.bluetooth.a2dp@1.0 \
+    android.hardware.soundtrigger@2.1 \
+    android.hardware.soundtrigger@2.0 \
+    android.hardware.camera.device@3.4 \
+    android.hardware.audio.effect@2.0 \
+    android.hardware.audio@2.0 \
+    android.hardware.broadcastradio@1.0 \
+    android.hardware.broadcastradio@1.1 \
+    android.hardware.neuralnetworks@1.0 \
+    android.hardware.neuralnetworks@1.1 \
+    android.hardware.vr@1.0 \
+    android.hardware.tetheroffload.config@1.0 \
+    android.hardware.confirmationui@1.0 \
+    android.frameworks.displayservice@1.0
+    
+PRODUCT_PACKAGES += \
+    audio.primary.default \
+    local_time.default \
+    vibrator.default \
+    libstagefright_omx \
+    libstagefright_amrnb_common \
+    libstagefright_soft_flacdec \
+    libstagefright_enc_common \
+    libstagefright_http_support \
+    libstagefright_soft_opusdec \
+    libstagefright_soft_hevcdec \
+    libstagefright_soft_mpeg2dec \
+    libstagefright_soft_avcenc \
+    libstagefright_soft_aacenc \
+    libstagefright_soft_avcdec \
+    libstagefright_soft_amrdec \
+    libstagefright_soft_amrwbenc \
+    libstagefright_soft_flacenc \
+    libstagefright_soft_mpeg4enc \
+    libstagefright_soft_g711dec \
+    libstagefright_soft_aacdec \
+    libstagefright_soft_vpxenc \
+    libstagefright_soft_mp3dec \
+    libstagefright_soft_mpeg4dec \
+    libstagefright_soft_amrnbenc \
+    libstagefright_soft_rawdec \
+    libstagefright_soft_vpxdec \
+    libstagefright_soft_gsmdec \
+    libstagefright_soft_vorbisdec \
+    libstagefright_hdcp
+
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0 \
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.1
+    
+    
+# Ubuntu
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/halium/fingerprints/system/lib/vendor.samsung.hardware.biometrics.fingerprint@2.1.so:system/vendor/lib/vendor.samsung.hardware.biometrics.fingerprint@2.1.so \
+    $(LOCAL_PATH)/halium/fingerprints/system/lib64/vendor.samsung.hardware.biometrics.fingerprint@2.1.so:system/vendor/lib64/vendor.samsung.hardware.biometrics.fingerprint@2.1.so \
+    $(LOCAL_PATH)/halium/fingerprints/system/vendor/bin/hw/vendor.samsung.hardware.biometrics.fingerprint@2.1-service:system/vendor/bin/hw/vendor.samsung.hardware.biometrics.fingerprint@2.1-service \
+    $(LOCAL_PATH)/halium/fingerprints/system/vendor/etc/init/vendor.samsung.hardware.biometrics.fingerprint@2.1-service.rc:system/vendor/etc/init/vendor.samsung.hardware.biometrics.fingerprint@2.1-service.rc
+
+PRODUCT_PACKAGES += \
+    libsf_compat_layer \
+    minimediaservice \
+    minisfservice \
+    miniafservice \
+    mediadrmserver \
+    libdrm \
+    libui_compat_layer
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)

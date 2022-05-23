@@ -255,6 +255,14 @@ noblelte_shims_omx += \
 	/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib/SHIM_TARGET.so \
 	/system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib64/SHIM_TARGET.so
 
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_ROOT_EXTRA_FOLDERS += \
+/efs \
+/preload \
+/hidden \
+/misc \
+/sbfs 
+
 # Shims: libstagefright
 TARGET_LD_SHIM_LIBS +=\
     $(subst SHIM_TARGET,libstagefright_shim,$(noblelte_shims_omx))
@@ -275,7 +283,7 @@ BOARD_USES_TRUST_KEYMASTER := true
 BOARD_SECCOMP_POLICY += device/samsung/noblelte-common/seccomp
 
 # Sepolicy
-# BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy-minimal
 
 # TWRP
 ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
